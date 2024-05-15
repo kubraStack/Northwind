@@ -1,8 +1,84 @@
 <app-navbar></app-navbar>
 <h1>{{title}}</h1>
-<p>Sepet {{cartCount}}</p>
+
+<!-- Angular 17 -->
+<!-- * ile başlayan directive'ler Structual Directive. elemtin renderlama sürecini ele alırlar. -->
+*ngIf:
+<p *ngIf="cartCount > 1; else cartCountOne">Sepette {{cartCount}} ürün bulunuyor..</p>
+
+<ng-template #cartCountOne>
+    <p *ngIf="cartCount === 1; else noProductInCart">Sepette sadece 1 ürün bulunmuyor !</p>
+</ng-template>
+
+<ng-template #noProductInCart>
+    <p>Sepette ürün bulunmuyor !</p>
+</ng-template>
+
+
+
+<hr>
+{{ '@if:' }}
+<!-- Angular 17 -->
+@if (cartCount > 1) {
+    <p>Sepette {{cartCount}} ürün bulunuyor.</p>
+}@else if (cartCount ===1) {
+    <p>Sepette sadece 1 ürün bulunuyor.</p>
+}@else {
+    <p>Sepette ürün bulunmuyor !</p>
+}
+
+<hr>
+
+<!-- Angular 17 -->
+<p>*ngFor:</p>
+<ul>
+    <ng-container *ngFor="let product of products">
+       <li *ngIf="!product.discontinued">
+            {{ product.name }} - {{ product.price }} 
+       </li>
+    </ng-container>
+</ul>
+
+<hr>
+
+<!-- Angular 17 -->
+{{ '@for:' }}
+<br><br>
+<!-- track ifadesi, her bir öğenin benzersiz bir kimliğe sahip olmasını sağlamak için kullanılır. -->
+@for (product of products; track $index) 
+{
+    <li *ngIf="!product.discontinued">
+        {{ product.name }} - {{ product.price }} 
+   </li>
+}
+<hr>
+{{'@for ve @if'}}
+<br><br>
+@for (product of products; track $index) 
+{
+    @if (!product.discontinued) {
+        <li>
+         {{ product.name }} - {{ product.price }} 
+        </li>
+    }
+}
+
+<hr>
+<!-- {{'@switch'}}
+@switch (state) {
+    @case (0) {
+      <p>loading</p>
+    }
+    @case (1) {
+      <p>loaded</p>
+    }
+    @case (2) {
+      <p>error</p>
+    }
+} -->
+<br><br>
 <button (click)="onAddProductToCart()">Ürünü Ekle</button>
+
 <app-footer></app-footer>
-<router-outlet />
 <!-- Angular'daki routing mekanizması için router-outlet kullanılır -->
 <!-- Eşleşen bir path olduğunda component yerleştirilmesi gerektiğinde buraya yerleştirecektir. -->
