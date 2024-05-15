@@ -1,6 +1,9 @@
-<p>Home-Page works!</p>
-<a routerLink="/auth/login">Go to login..</a>
 <!-- Componentler arasında bağlantı kullanmak istiyorsak href kullanılmaz.
     Çünkü bütün dosyalar her bağlantı değiştiğinde yeniden yüklenir.
-    RouterModule ilgili component'e eklenerek routerLink kullanılır.
- -->
+    RouterModule ilgili component'e eklenerek routerLink kullanılır. 
+-->
+
+<app-basic-layout>
+    <p>Home-Page works!</p>
+    <a routerLink="/auth/login">Go to login..</a>
+</app-basic-layout>
