@@ -64,19 +64,32 @@
 }
 
 <hr>
-<!-- {{'@switch'}}
-@switch (state) {
+*ngSwitch
+<ng-container [ngSwitch]="cartCount">
+    <p *ngSwitchCase="0">Sepette Ürün Bulunmuyor !</p>
+    <p *ngSwitchCase="1">Sepette 1 Bulunuyor !</p>
+    <p *ngSwitchDefault>Sepette {{cartCount}} Ürün Bulunyor !</p>
+    
+</ng-container>
+
+<hr>
+
+<!-- Angular 17 -->
+{{'@switch'}}
+@switch (cartCount) 
+{
     @case (0) {
-      <p>loading</p>
+        <p>Sepette Ürün Bulunmuyor !</p>
     }
     @case (1) {
-      <p>loaded</p>
+        <p>Sepette 1 Ürün Bulunuyor !</p>
     }
-    @case (2) {
-      <p>error</p>
+    @default {
+        <p>Sepette {{ cartCount }} Ürün Bulunuyor ! </p>
     }
-} -->
-<br><br>
+}
+
+<br>
 <button (click)="onAddProductToCart()">Ürünü Ekle</button>
 
 <app-footer></app-footer>
