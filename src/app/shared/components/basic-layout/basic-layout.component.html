@@ -1,12 +1,14 @@
-<header>
-    <app-navbar></app-navbar>
-</header>
-<main>
-    <ng-content>
-        <!-- ng-content: bu componenti kullandığımız yerde içerisine geçtiğimiz template'i buraya yeşleştirir. -->
-    </ng-content>
-</main>
+<div class="d-flex flex-column min-vh-100 ">
+    <header>
+        <app-navbar></app-navbar>
+    </header>
+    <main class="container flex-grow-1 py-3">
+        <ng-content>
+            <!-- ng-content: bu componenti kullandığımız yerde içerisine geçtiğimiz template'i buraya yeşleştirir. -->
+        </ng-content>
+    </main>
 
-<footer>
-    <app-footer></app-footer>
-</footer>
+    <footer>
+        <app-footer></app-footer>
+    </footer>
+</div>
