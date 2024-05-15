@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { CommonModule } from '@angular/common';
@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root', // template içinde kullanılacak etiket adı
   standalone: true,  //Angular 17 sonrası için varsayılan hale geldi. Standalone componentler herhangi bir Module yapısına bağlı kalmadan var olabilirlerç
-  imports: [CommonModule, NavbarComponent, FooterComponent], //İmport edilecek modülleri ve angular yapılarını belirtir.
+  imports: [CommonModule, RouterModule], //İmport edilecek modülleri ve angular yapılarını belirtir.
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
