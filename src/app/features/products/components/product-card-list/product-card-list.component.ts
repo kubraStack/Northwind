@@ -1,26 +1,31 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ProductListITem } from '../models/product-list-item';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {  ProductListItem } from '../models/product-list-item';
+import { CardComponent } from '../../../../shared/components/card/card.component';
 
 @Component({
   selector: 'app-product-card-list',
   standalone: true,
   imports: [
     CommonModule,
+    CardComponent
   ],
   templateUrl: './product-card-list.component.html',
   styleUrl: './product-card-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductCardListComponent {
-  productList : ProductListITem[] = [
+
+  @Input() filterByCategoryId: number | null = null;
+
+  productList : ProductListItem[] = [
     {
       id:1,
       categoryId:1,
       name: 'orange Juice',
       price: 2.99,
       description: 'Fresh squeezed orange juice',
-      imageUrl: 'https://via.placeholder.com/150',
+      imageUrl: 'https://via.placeholder.com/200',
     },
     {
       id: 2,
@@ -63,4 +68,16 @@ export class ProductCardListComponent {
       imageUrl: 'https://via.placeholder.com/200',
     }//Mock Data
   ]
- }
+
+  get filteredProductList(): ProductListItem[] {
+    let filteredProductList = this.productList;
+
+    if (this.filterByCategoryId) {
+      filteredProductList = this.productList.filter(
+        (product) => product.categoryId === this.filterByCategoryId
+      );
+    }
+
+    return filteredProductList;
+  }
+}

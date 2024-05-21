@@ -19,4 +19,12 @@ import { ProductCardListComponent } from '../../features/products/components/pro
     styleUrl: './Home-Page.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomePageComponent { }
+export class HomePageComponent {
+    selectedCategoryId: number | null = null;
+
+    onChangeCategorySelect(event: number|null) {
+        this.selectedCategoryId = event;
+    }
+
+
+}
