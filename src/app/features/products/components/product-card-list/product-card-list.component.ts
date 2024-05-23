@@ -69,15 +69,13 @@ export class ProductCardListComponent {
     }//Mock Data
   ]
 
-  get filteredProductList(): ProductListItem[] {
+  get filteredProductList(): ProductListItem[]{
     let filteredProductList = this.productList;
 
     if (this.filterByCategoryId) {
-      filteredProductList = this.productList.filter(
-        (product) => product.categoryId === this.filterByCategoryId
-      );
+      filteredProductList = this.productList.filter((product) => product.categoryId === this.filterByCategoryId);
     }
-
     return filteredProductList;
   }
+  
 }

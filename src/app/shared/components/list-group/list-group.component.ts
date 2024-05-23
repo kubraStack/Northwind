@@ -21,6 +21,11 @@ export type ListGroupItems = ListGroupItem[];
 export class ListGroupComponent {
   selectedItemId: string | null = null;
 
+  @Input() items: ListGroupItems = [];
+ //Input: Component'in kullanıldığı yerden input alabilir böylece dışarıdan veri almak için kullanılabilir.
+
+ @Output() changeSelect = new EventEmitter<string | null>();
+
   onClickItem(event: ListGroupItem) {
     this.selectedItemId = this.selectedItemId !== event.id ? event.id : null;
     this.changeSelect.emit(this.selectedItemId); //emit event: event'i tetiklediğimiz yer
@@ -29,10 +34,8 @@ export class ListGroupComponent {
   isSelectedId(itemId: string): boolean{
     return this.selectedItemId === itemId;
   }
- @Input() items: ListGroupItems = [];
- //Input: Component'in kullanıldığı yerden input alabilir böylece dışarıdan veri almak için kullanılabilir.
+ 
 
- @Output() changeSelect = new EventEmitter<string | null>();
-//EventEmitter: Component'ten dışarıya event göndermek için kullanılır
-// <app-list-group (changeSelect)="onSelect($event)"></app-list-group>
+  //EventEmitter: Component'ten dışarıya event göndermek için kullanılır
+  // <app-list-group (changeSelect)="onSelect($event)"></app-list-group>
 }

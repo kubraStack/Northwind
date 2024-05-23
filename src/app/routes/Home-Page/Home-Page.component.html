@@ -11,7 +11,9 @@
     <section class="row mt-3">
         <aside class="col-3">
             <h1 style="font-size: 1.5rem;">Categories</h1>
-            <app-category-list-group (changeSelect)="onChangeCategorySelect($event)"></app-category-list-group> 
+            <app-category-list-group 
+                (changeSelect)="onChangeCategorySelect($event)"
+            ></app-category-list-group>
             <!-- $event: Output'un verdiği değeri referans eder.-->
         </aside>
         <section class="col">

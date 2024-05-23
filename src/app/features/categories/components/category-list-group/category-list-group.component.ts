@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { CategoryListItem } from '../../models/category-list-items';
 import { ListGroupComponent, ListGroupItem, ListGroupItems } from '../../../../shared/components/list-group/list-group.component';
+import { Console } from 'node:console';
 
 @Component({
   selector: 'app-category-list-group',
@@ -30,7 +31,7 @@ export class CategoryListGroupComponent {
   ]; //Mock data
 
   onChangeSelect(selectedItemId: string | null) {
-    this.changeSelect.emit(selectedItemId ? Number(selectedItemId) : null);
+   this.changeSelect.emit(Number(selectedItemId));
   }
 
   get categoryListGroupItems(): ListGroupItems {

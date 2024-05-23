@@ -22,9 +22,9 @@ import { ProductCardListComponent } from '../../features/products/components/pro
 export class HomePageComponent {
     selectedCategoryId: number | null = null;
 
-    onChangeCategorySelect(event: number|null) {
-        this.selectedCategoryId = event;
-    }
 
+    onChangeCategorySelect(event: number|null) {
+       this.selectedCategoryId = event;
+    }
 
 }
