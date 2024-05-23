@@ -19,7 +19,7 @@ export type ListGroupItems = ListGroupItem[];
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListGroupComponent {
-  selectedItemId: string | null = null;
+  @Input() selectedItemId: string | null = null;
 
   @Input() items: ListGroupItems = [];
  //Input: Component'in kullanıldığı yerden input alabilir böylece dışarıdan veri almak için kullanılabilir.
