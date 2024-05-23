@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-card',
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule
   ],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
@@ -18,4 +20,12 @@ export class CardComponent {
   @Input() description?:string;
   @Input() buttonLabel!:string;
   @Input() imageHeight: number = 200;
+  @Input() buttonRouterLink?: string;
+  @Output() buttonClick = new EventEmitter<void>();
+
+  onButtonClick(){
+    this.buttonClick.emit();
+  }
+
+
 }
