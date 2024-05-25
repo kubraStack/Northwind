@@ -1,9 +1,7 @@
 export interface ProductListItem{
     id: number;
     categoryId: number;
+    quantityPerUnit: string
     name: string;
-    price:  number;
-    description: string;
-    imageUrl: string;
-  
+    unitPrice:  number;  
 }
