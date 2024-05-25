@@ -1,0 +1,13 @@
+<div class="container-fluid row py-3">
+    <aside class="col-3">
+        <h1>Northwind</h1>
+        <!-- Navigation menu olarak kullanacağız -->
+        <app-list-group 
+            [items]="sidebarMenuListItem"
+            (changeSelect)="onChangeSidebarMenuSelect($event)"
+        ></app-list-group>
+    </aside>
+    <main class="col">
+        <ng-content></ng-content>
+    </main>
+</div>

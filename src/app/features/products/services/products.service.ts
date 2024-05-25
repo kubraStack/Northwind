@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductListItem } from '../models/product-list-item';
 import { ProductDetails } from '../models/product-details';
+import { environment } from '../../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })//singleton
 export class ProductsService {
 
-  private apiControllerUrl = 'http://localhost:3000/products'
+  private apiControllerUrl = `${environment.apiUrl}/products`;
   
   constructor(private http:HttpClient ) { }
 
