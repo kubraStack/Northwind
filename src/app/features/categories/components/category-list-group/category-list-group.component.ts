@@ -35,7 +35,7 @@ export class CategoryListGroupComponent {
 
 
   onChangeSelect(selectedItemId: string | null) {
-   this.changeSelect.emit(Number(selectedItemId));
+   this.changeSelect.emit(selectedItemId ? Number(selectedItemId) : null);
   }
 
   get categoryListGroupItems(): ListGroupItems {
