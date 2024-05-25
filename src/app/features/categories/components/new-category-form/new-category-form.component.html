@@ -1,0 +1,18 @@
+<form [formGroup]="newCategoryFormGroup" (submit)="onFormSubmit()">
+    <div>
+        <label for="nameInput">Name: </label>
+        <!-- FormModule -->
+        <!-- <input type="text" id="nameInput" class="ms-2" [(ngModel)]="nameInput" /> -->
+        <input type="text" id="nameInput" class="ms-2" formControlName="name" />
+        <!-- two-way binding -->
+    </div>
+    
+    <div class="mt-2">
+        <label for="descriptionInput">Description: </label>
+        <!-- FormModule -->
+        <!-- <input type="text" id="descriptionInput" class="ms-2" [(ngModel)]="descriptionInput" /> -->
+        <input type="text" id="descriptionInput" class="ms-2" formControlName="description" />
+    </div>
+
+    <button type="submit">Add</button>
+</form>
