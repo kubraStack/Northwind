@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root', // template içinde kullanılacak etiket adı
   standalone: true,  //Angular 17 sonrası için varsayılan hale geldi. Standalone componentler herhangi bir Module yapısına bağlı kalmadan var olabilirlerç
-  imports: [CommonModule, RouterModule], //İmport edilecek modülleri ve angular yapılarını belirtir.
+  imports: [RouterModule], //İmport edilecek modülleri ve angular yapılarını belirtir.
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
