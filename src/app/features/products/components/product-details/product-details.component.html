@@ -11,7 +11,7 @@
             <h2>{{product.name}}</h2>
             <p><strong>Quantity Per Unit:</strong> {{product.quantityPerUnit}} </p>
             <p><strong>Unit In Stock:</strong>  {{product.unitsInStock}} </p>
-            <p class="display-6"><strong>Unit Price:</strong>  {{product.unitPrice | currency}} </p>
+            <p class="display-6" appHighlight="yellow" labelText="(On Sale!)"><strong>Unit Price:</strong>  {{product.unitPrice | appVat |currency}} </p>
             
             <button class="btn btn-primary" (click)="onAddToCard()">Add to Cart</button>
 
