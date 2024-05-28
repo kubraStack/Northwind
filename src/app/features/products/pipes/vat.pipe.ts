@@ -7,7 +7,7 @@ import { Pipe, type PipeTransform } from '@angular/core';
 export class VatPipe implements PipeTransform {
 
   transform(value: number, taxRate: number = 20):number {
-    const newValue = value + (value  = (taxRate / 100)); // %19 VAT(KDV)
+    const newValue = value + (value  * (taxRate / 100)); // %19 VAT(KDV)
     return newValue;
   }
 

@@ -9,4 +9,5 @@ export interface ProductDetails {
     reorderLevel:    number;
     discontinued:    boolean;
     name:            string;
+    imageUrl: string;
 }
