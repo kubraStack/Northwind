@@ -4,10 +4,14 @@
 -->
 
 <app-basic-layout>
-    <div class="d-flex flex-column justify-content-center align-items-center">
+    <div class="d-flex flex-column justify-content-center align-items-center" *appIfNot="oldUser; else welcomeBack">
         <h1>Welcome</h1>
         <small>Out products are fresh!</small>
     </div>
+    <ng-template #welcomeBack>
+        <h1>Welcome back!</h1>
+        <small>Out products are still fresh!</small>
+    </ng-template>
     <section class="row mt-3">
         <aside class="col-3">
             <h1 style="font-size: 1.5rem;">Categories</h1>

@@ -17,7 +17,7 @@ export class HighlightDirective implements OnInit {
 
     if(this.labelText){
       const span = document.createElement('span');
-      span.innerHTML = ('(On Sale!)');
+      span.innerHTML = this.labelText;
       span.style.backgroundColor = 'lightgreen';
       span.style.padding = '5px';
       span.style.borderRadius = '5px';
